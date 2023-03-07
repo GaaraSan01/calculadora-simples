@@ -40,7 +40,8 @@ tr td:hover{
 }
 #resultado{
     background-color: white;
-    width: 90%;
+    max-width: 90%;
+    min-width: 89%;
     height: 60px;
     margin: 5px;
     font-size: 25px;

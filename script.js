@@ -1,19 +1,26 @@
-function insert (n){
+const resultado = document.getElementById('resultado')
+const total = document.getElementById('res')
+const clear = document.getElementById('limpa')
+const apagar = document.getElementById('apaga')
+
+function insert(n) {
     resultado.innerText += n
 }
-limpa.addEventListener('click', () => {
+clear.addEventListener('click', () => {
     resultado.innerText = ''
 })
-apaga.addEventListener('click', () => {
-    if(resultado.textContent){
+apagar.addEventListener('click', () => {
+    if (resultado.textContent) {
         let result = document.getElementById('resultado').innerHTML
         resultado.innerHTML = result.substring(0, result.length - 1);
-    } 
+    }
 })
-res.addEventListener('click', () => {
-    if(resultado != ''){
-        resultado.innerHTML += `<br>${eval(resultado.innerHTML)}`
-    }else{
+total.addEventListener('click', () => {
+    if (resultado != '') {
+        const resNumeros = eval(resultado.innerHTML)
+        const limitNumeros = Number(resNumeros.toFixed(5))
+        resultado.innerHTML += `<br><p>${limitNumeros}</p>`
+    } else {
         resultado.innerHTML = ''
     }
 })
